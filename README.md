@@ -5,7 +5,7 @@ This is a **learning/demo project** and a solid base for real flows like custome
 
 ---
 
-## ✨ What’s inside
+## What’s inside
 - Floating chatbot UI (bottom-right) with mobile-friendly full-screen mode
 - Streaming responses from Gemini via Vercel AI SDK (`app/api/chat/route.ts`)
 - Config-driven chatbot setup (name, welcome message, system prompt, model) in `lib/config.ts`
@@ -19,7 +19,7 @@ This is a **learning/demo project** and a solid base for real flows like custome
 
 ---
 
-## 🚀 Quick Start (clone + run)
+## Quick Start (clone + run)
 
 ~~~bash
 set -euo pipefail
@@ -38,7 +38,7 @@ pnpm i
 
 ---
 
-## 🔐 Create `.env.local` (required)
+## Create `.env.local` (required)
 
 Create a file named **`.env.local`** in the **project root** (`ChatGPTX/.env.local`).
 
@@ -71,7 +71,7 @@ ENV_EOF
 
 ---
 
-## 🧩 Start Dev Server
+## Start Dev Server
 
 ~~~bash
 set -euo pipefail
@@ -83,7 +83,7 @@ Open the site at `localhost:3000` and click the chat button in the bottom-right.
 
 ---
 
-## 📦 Production build (optional)
+## Production build (optional)
 
 ~~~bash
 set -euo pipefail
@@ -94,7 +94,7 @@ pnpm start
 
 ---
 
-## 📁 Project structure (high level)
+## Project structure (high level)
 
 ~~~text
 ChatGPTX/
@@ -138,7 +138,7 @@ ChatGPTX/
 
 ---
 
-## 🛠 Customize
+## Customize
 - **Bot name / welcome message / system prompt / model**: `lib/config.ts`
 - **Rate limiting values** (capacity/refill/interval + client throttle): `lib/config.ts`
 - **Arcjet rules** (shield, bot detection, token bucket): `lib/arcjet.ts`
@@ -148,7 +148,7 @@ ChatGPTX/
 
 ---
 
-## 🧯 Troubleshooting
+## Troubleshooting
 - **403 Forbidden – Invalid referer**  
   Set `NEXT_PUBLIC_APP_URL` in `.env.local` to match your site origin.
 - **429 Too many requests**  
