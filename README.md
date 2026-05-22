@@ -102,10 +102,10 @@ Open `http://localhost:3000` in your browser.
 ## Available Scripts
 
 ```bash
-npm run dev      # Start the development server
-npm run build    # Create a production build
-npm run start    # Run the production server
-npm run lint     # Run Next.js linting
+npm run dev      
+npm run build    
+npm run start    
+npm run lint     
 ```
 
 ## Environment Variables
