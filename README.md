@@ -76,8 +76,6 @@ GOOGLE_SECRET=
 NEXTAUTH_URL=http://localhost:3000
 ```
 
-For Vercel, set `NEXTAUTH_URL` to the deployed app URL and register the matching Google OAuth callback URL. See [DEPLOYMENT.md](./DEPLOYMENT.md).
-
 ### 3. Set up the database
 
 ```bash
