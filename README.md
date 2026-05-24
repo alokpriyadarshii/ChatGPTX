@@ -76,6 +76,8 @@ GOOGLE_SECRET=
 NEXTAUTH_URL=http://localhost:3000
 ```
 
+For Vercel, set `NEXTAUTH_URL` to the deployed app URL and register the matching Google OAuth callback URL. See [DEPLOYMENT.md](./DEPLOYMENT.md).
+
 ### 3. Set up the database
 
 ```bash
@@ -119,9 +121,10 @@ npm run lint
 | `GOOGLE_SECRET` | Google OAuth client secret |
 | `NEXTAUTH_URL` | Base URL of the app, such as `http://localhost:3000` |
 
+For Google OAuth, the authorized redirect URI must be `${NEXTAUTH_URL}/api/auth/callback/google`.
+
 ## Notes
 
 - The OpenAI API key is entered by the user inside the app and stored in browser local storage.
 - Conversations are stored in PostgreSQL through Prisma.
 - The default chat model in the source code is `gpt-3.5-turbo`; you can update it in `actions/chat.ts`.
-
