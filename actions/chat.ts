@@ -97,7 +97,7 @@ const map = globalThis.ai_map ?? new Map<string, OpenAI>();
 globalThis.ai_map = map;
 
 function resolveApiKey(apiKey: string) {
-  const key = apiKey.trim() || process.env.OPENAI_API_KEY?.trim();
+  const key = process.env.OPENAI_API_KEY?.trim() || apiKey.trim();
 
   if (!key) {
     throw new Error(
