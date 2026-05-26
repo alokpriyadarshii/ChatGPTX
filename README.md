@@ -1,6 +1,6 @@
 # ChatGPTX
 
-ChatGPTX is a clean, full stack AI chat application built with Next.js. It includes Google login, saved conversations, dark/light mode, a responsive chat UI, and OpenAI powered answers using the user's own API key.
+ChatGPTX is a clean, full stack AI chat application built with Next.js. It includes Google login, saved conversations, dark/light mode, a responsive chat UI, and OpenAI powered answers using the user's own API key or a server-side environment key.
 
 ## Preview
 
@@ -16,7 +16,8 @@ ChatGPTX is a clean, full stack AI chat application built with Next.js. It inclu
 
 - Google authentication with NextAuth
 - AI chat powered by the OpenAI API
-- User-provided OpenAI API key saved in the browser
+- OpenAI API key support through Vercel environment variables
+- Optional user-provided OpenAI API key saved in the browser
 - Saved chat conversations with Prisma and PostgreSQL
 - Conversation history panel
 - New chat flow with optimistic UI updates
@@ -73,6 +74,7 @@ POSTGRES_URL_NON_POOLING=
 NEXTAUTH_SECRET=
 GOOGLE_ID=
 GOOGLE_SECRET=
+OPENAI_API_KEY=
 NEXTAUTH_URL=http://localhost:3000
 ```
 
@@ -94,10 +96,19 @@ Open `http://localhost:3000` in your browser.
 ## Usage
 
 1. Register or log in with Google.
-2. Go to **My account**.
-3. Add your OpenAI API key and save it.
-4. Start a new chat and ask a question.
-5. Previous conversations will appear in the conversation panel.
+2. Add `OPENAI_API_KEY` to your environment, or go to **My account** and enter a user-specific key.
+3. Start a new chat and ask a question.
+4. Previous conversations will appear in the conversation panel.
+
+## Vercel Setup
+
+Add this environment variable in Vercel before deploying:
+
+```env
+OPENAI_API_KEY=your_openai_api_key
+```
+
+Set it for Production, Preview, and Development if you want all deployments to use the same server-side key. After saving it, redeploy the project so the app can read the new value.
 
 ## Available Scripts
 
@@ -117,12 +128,14 @@ npm run lint
 | `NEXTAUTH_SECRET` | Secret key used by NextAuth |
 | `GOOGLE_ID` | Google OAuth client ID |
 | `GOOGLE_SECRET` | Google OAuth client secret |
+| `OPENAI_API_KEY` | Server-side OpenAI API key used when the account key field is empty |
 | `NEXTAUTH_URL` | Base URL of the app, such as `http://localhost:3000` |
 
 For Google OAuth, the authorized redirect URI must be `${NEXTAUTH_URL}/api/auth/callback/google`.
 
 ## Notes
 
-- The OpenAI API key is entered by the user inside the app and stored in browser local storage.
+- The app uses `OPENAI_API_KEY` from the server environment when the account key field is empty.
+- A user can still enter an OpenAI API key inside the app to override the server environment key for their session.
 - Conversations are stored in PostgreSQL through Prisma.
 - The default chat model in the source code is `gpt-3.5-turbo`; you can update it in `actions/chat.ts`.
