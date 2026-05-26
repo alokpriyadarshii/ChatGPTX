@@ -1,3 +1,4 @@
+import "@/lib/bootstrap-env";
 import { authConfig } from "@/lib/auth";
 import NextAuth from "next-auth/next";
 
