@@ -94,16 +94,30 @@ declare global {
 }
 
 const map = globalThis.ai_map ?? new Map<string, OpenAI>();
+globalThis.ai_map = map;
+
+function resolveApiKey(apiKey: string) {
+  const key = apiKey.trim() || process.env.OPENAI_API_KEY?.trim();
+
+  if (!key) {
+    throw new Error(
+      "OpenAI API key is missing. Add it in My account or set OPENAI_API_KEY in Vercel."
+    );
+  }
+
+  return key;
+}
 
 async function createCompletion(apiKey: string, message: string) {
+  const resolvedApiKey = resolveApiKey(apiKey);
   let ai: OpenAI;
-  if (map.has(apiKey)) {
-    ai = map.get(apiKey)!;
+  if (map.has(resolvedApiKey)) {
+    ai = map.get(resolvedApiKey)!;
   } else {
     ai = new OpenAI({
-      apiKey,
+      apiKey: resolvedApiKey,
     });
-    map.set(apiKey, ai);
+    map.set(resolvedApiKey, ai);
   }
   const chatCompletion = await ai.chat.completions.create({
     messages: [{ role: "user", content: message }],
