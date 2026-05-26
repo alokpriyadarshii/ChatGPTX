@@ -7,7 +7,11 @@ import { Button } from "./ui/button";
 import SignOutButton from "@/components/signout-btn";
 import { useToast } from "./ui/use-toast";
 
-export default function UserApi() {
+type UserApiProps = {
+  hasServerApiKey: boolean;
+};
+
+export default function UserApi({ hasServerApiKey }: UserApiProps) {
   const [apiKey, setApiKey] = useState("");
   const { toast } = useToast();
 
@@ -27,18 +31,22 @@ export default function UserApi() {
 
   return (
     <>
-      <div className="grid w-full items-center gap-1.5">
-        <Label htmlFor="api">OpneAI Key</Label>
-        <Input
-          id="api"
-          value={apiKey}
-          onChange={(e) => setApiKey(e.target.value)}
-        />
-      </div>
+      {!hasServerApiKey && (
+        <div className="grid w-full items-center gap-1.5">
+          <Label htmlFor="api">OpenAI Key</Label>
+          <Input
+            id="api"
+            value={apiKey}
+            onChange={(e) => setApiKey(e.target.value)}
+          />
+        </div>
+      )}
       <div className="flex flex-row items-center gap-2">
-        <Button className="w-24" onClick={handleSave}>
-          Save
-        </Button>
+        {!hasServerApiKey && (
+          <Button className="w-24" onClick={handleSave}>
+            Save
+          </Button>
+        )}
         <SignOutButton />
       </div>
     </>

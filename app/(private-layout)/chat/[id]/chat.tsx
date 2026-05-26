@@ -75,14 +75,7 @@ function ChatInput({ addMessage, id }: ConversationComponent) {
   async function handleSubmit(formData: FormData) {
     const message = formData.get("message") as string;
     if (!message) return;
-    const apiKey = localStorage.getItem("apiKey");
-    if (!apiKey) {
-      toast({
-        title: "No API key found!",
-        description: 'Please add API key from "My account" section',
-      });
-      return;
-    }
+    const apiKey = localStorage.getItem("apiKey") ?? "";
     if (inputRef.current) {
       inputRef.current.value = "";
     }

@@ -15,6 +15,8 @@ import { UserIcon } from "lucide-react";
 export default async function Profile() {
   const session = await getUser();
   if (!session?.user) return null;
+  const hasServerApiKey = Boolean(process.env.OPENAI_API_KEY?.trim());
+
   return (
     <div>
       <Dialog>
@@ -36,7 +38,7 @@ export default async function Profile() {
                 <Label htmlFor="username">Username</Label>
                 <Input disabled id="username" value={session.user.name ?? ""} />
               </div>
-              <UserApi />
+              <UserApi hasServerApiKey={hasServerApiKey} />
             </div>
           </DialogHeader>
         </DialogContent>
