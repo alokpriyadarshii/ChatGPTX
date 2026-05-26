@@ -1,3 +1,3 @@
-import { normalizeProcessEnv } from "./env";
+import { bootstrapAuthEnv } from "./env";
 
-normalizeProcessEnv("NEXTAUTH_URL");
+bootstrapAuthEnv();

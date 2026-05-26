@@ -108,7 +108,7 @@ Add this environment variable in Vercel before deploying:
 OPENAI_API_KEY=your_openai_api_key
 ```
 
-Set it for Production, Preview, and Development if you want all deployments to use the same server-side key. For `NEXTAUTH_URL`, put only the URL in the Vercel value field, for example `https://chat-gptx-sigma.vercel.app`, not `NEXTAUTH_URL=https://chat-gptx-sigma.vercel.app`. After saving environment variables, redeploy the project so the app can read the new values.
+Set it for Production, Preview, and Development if you want all deployments to use the same server-side key. For `NEXTAUTH_URL`, put only the URL in the Vercel value field, for example `https://chat-gptx-sigma.vercel.app`, not `NEXTAUTH_URL=https://chat-gptx-sigma.vercel.app`. The app redirects Vercel deployment URLs back to this canonical URL before Google sign-in, so Google OAuth does not break on every redeploy. After saving environment variables, redeploy the project so the app can read the new values.
 
 ## Available Scripts
 
@@ -131,7 +131,7 @@ npm run lint
 | `OPENAI_API_KEY` | Server-side OpenAI API key used when the account key field is empty |
 | `NEXTAUTH_URL` | Base URL of the app, such as `http://localhost:3000` |
 
-For Google OAuth, the authorized redirect URI must be `${NEXTAUTH_URL}/api/auth/callback/google`.
+For Google OAuth, the authorized redirect URI must be `${NEXTAUTH_URL}/api/auth/callback/google`. For the production deployment above, add `https://chat-gptx-sigma.vercel.app/api/auth/callback/google` to the Google Cloud OAuth client.
 
 ## Notes
 

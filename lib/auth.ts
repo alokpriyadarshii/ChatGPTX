@@ -2,9 +2,9 @@ import { AuthOptions, DefaultSession, getServerSession } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import prisma from "../prisma/client";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import { normalizeProcessEnv } from "./env";
+import { bootstrapAuthEnv } from "./env";
 
-normalizeProcessEnv("NEXTAUTH_URL");
+bootstrapAuthEnv();
 
 declare module "next-auth" {
   interface Session extends DefaultSession {
