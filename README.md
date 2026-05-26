@@ -108,7 +108,7 @@ Add this environment variable in Vercel before deploying:
 OPENAI_API_KEY=your_openai_api_key
 ```
 
-Set it for Production, Preview, and Development if you want all deployments to use the same server-side key. After saving it, redeploy the project so the app can read the new value.
+Set it for Production, Preview, and Development if you want all deployments to use the same server-side key. For `NEXTAUTH_URL`, put only the URL in the Vercel value field, for example `https://chat-gptx-sigma.vercel.app`, not `NEXTAUTH_URL=https://chat-gptx-sigma.vercel.app`. After saving environment variables, redeploy the project so the app can read the new values.
 
 ## Available Scripts
 
