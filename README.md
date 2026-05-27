@@ -26,30 +26,114 @@ ChatGPTX is a clean, full stack AI chat application built with Next.js. It inclu
 
 ## Tech Stack
 
-- Next.js 14
-- React 18
-- TypeScript
-- Tailwind CSS
-- shadcn/ui and Radix UI
-- Prisma ORM
-- PostgreSQL
-- NextAuth.js
-- OpenAI SDK
+| Category | Technology |
+| --- | --- |
+| Framework | Next.js 14 |
+| Programming Language | TypeScript |
+| Frontend Library | React 18 |
+| Styling | Tailwind CSS |
+| UI Components | shadcn/ui, Radix UI |
+| Authentication | NextAuth.js |
+| OAuth Provider | Google OAuth |
+| Database | PostgreSQL |
+| ORM | Prisma |
+| AI Integration | OpenAI API |
+| Icons | Lucide React |
+| Validation | Zod |
+| Theme Support | next-themes |
+| Deployment | Vercel |
+| Linting | ESLint |
+| Package Manager | npm |
 
 ## Project Structure
 
 ```text
 ChatGPTX/
-├── actions/              
-├── app/                  
-├── components/          
-├── images/               
-├── lib/                 
-├── prisma/               
-├── types/               
-├── .env.example          
-├── package.json         
-└── README.md            
+├── actions/
+│   └── chat.ts
+├── app/
+│   ├── (private-layout)/
+│   │   ├── chat/
+│   │   │   ├── [id]/
+│   │   │   │   ├── chat.tsx
+│   │   │   │   ├── loading.tsx
+│   │   │   │   └── page.tsx
+│   │   │   ├── input.tsx
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   └── layout.tsx
+│   ├── (public-layout)/
+│   │   ├── (auth)/
+│   │   │   ├── login/
+│   │   │   │   └── page.tsx
+│   │   │   └── register/
+│   │   │       └── page.tsx
+│   │   ├── (hero)/
+│   │   │   └── page.tsx
+│   │   └── layout.tsx
+│   ├── api/
+│   │   ├── auth/
+│   │   │   └── [...nextauth]/
+│   │   │       └── route.ts
+│   │   └── debug-auth/
+│   │       └── route.ts
+│   ├── error.tsx
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── not-found.tsx
+├── components/
+│   ├── ui/
+│   │   ├── button.tsx
+│   │   ├── dialog.tsx
+│   │   ├── input.tsx
+│   │   ├── label.tsx
+│   │   ├── scroll-area.tsx
+│   │   ├── sheet.tsx
+│   │   ├── skeleton.tsx
+│   │   ├── toast.tsx
+│   │   ├── toaster.tsx
+│   │   └── use-toast.ts
+│   ├── google-login.tsx
+│   ├── hero-nav.tsx
+│   ├── left-panel.tsx
+│   ├── logo.tsx
+│   ├── navbar.tsx
+│   ├── profile.tsx
+│   ├── session-provider.tsx
+│   ├── signout-btn.tsx
+│   ├── submit.tsx
+│   ├── theme-provider.tsx
+│   ├── toggle.tsx
+│   └── user-api.tsx
+├── images/
+│   ├── ChatGPT Image May 23, 2026, 02_29_10 AM (1).png
+│   ├── ChatGPT Image May 23, 2026, 02_29_10 AM (2).png
+│   ├── ChatGPT Image May 23, 2026, 02_29_11 AM (3).png
+│   └── ChatGPT Image May 23, 2026, 02_29_11 AM (4).png
+├── lib/
+│   ├── auth.ts
+│   ├── bootstrap-env.ts
+│   ├── env.ts
+│   └── utils.ts
+├── prisma/
+│   ├── client.ts
+│   └── schema.prisma
+├── types/
+│   └── index.ts
+├── .env.example
+├── .eslintrc.json
+├── .gitignore
+├── components.json
+├── LICENSE
+├── middleware.ts
+├── next.config.mjs
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── README.md
+├── tailwind.config.ts
+└── tsconfig.json
 ```
 
 ## Getting Started
