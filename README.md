@@ -1,6 +1,6 @@
 # ChatGPTX
 
-ChatGPTX is a clean, full stack AI chat application built with Next.js. It includes Google login, saved conversations, dark/light mode, a responsive chat UI, and OpenAI powered answers using the user's own API key or a server-side environment key.
+ChatGPTX is a clean, full stack AI chat application built with Next.js. It includes Google login, saved conversations, dark/light mode, a responsive chat UI, and OpenAI powered answers using the user's own API key or a server side environment key.
 
 ## Preview
 
