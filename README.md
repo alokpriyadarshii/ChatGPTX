@@ -4,13 +4,15 @@ ChatGPTX is a clean, full stack AI chat application built with Next.js. It inclu
 
 ## Preview
 
-<img src="./images/ChatGPT Image May 23, 2026, 02_29_11 AM (3).png" alt="ChatGPTX landing page" width="100%" />
+<img src="./images/preview-1.png" alt="ChatGPTX landing page" width="100%" />
 
-<img src="./images/ChatGPT Image May 23, 2026, 02_29_10 AM (2).png" alt="ChatGPTX greeting screen" width="100%" />
+<img src="./images/preview-2.png" alt="ChatGPTX greeting screen" width="100%" />
 
-<img src="./images/ChatGPT Image May 23, 2026, 02_29_10 AM (1).png" alt="ChatGPTX dark chat screen" width="100%" />
+<img src="./images/preview-3.png" alt="ChatGPTX dark chat screen" width="100%" />
 
-<img src="./images/ChatGPT Image May 23, 2026, 02_29_11 AM (4).png" alt="ChatGPTX light chat screen" width="100%" />
+<img src="./images/preview-4.png" alt="ChatGPTX light chat screen" width="100%" />
+
+<img src="./images/preview-5.png" alt="ChatGPTX light chat screen" width="100%" />
 
 ## Features
 
@@ -107,10 +109,11 @@ ChatGPTX/
 │   ├── toggle.tsx
 │   └── user-api.tsx
 ├── images/
-│   ├── ChatGPT Image May 23, 2026, 02_29_10 AM (1).png
-│   ├── ChatGPT Image May 23, 2026, 02_29_10 AM (2).png
-│   ├── ChatGPT Image May 23, 2026, 02_29_11 AM (3).png
-│   └── ChatGPT Image May 23, 2026, 02_29_11 AM (4).png
+│   ├── preview-1.png
+│   ├── preview-2.png
+│   ├── preview-3.png
+│   └── preview-4.png
+│   └── preview-5.png
 ├── lib/
 │   ├── auth.ts
 │   ├── bootstrap-env.ts
